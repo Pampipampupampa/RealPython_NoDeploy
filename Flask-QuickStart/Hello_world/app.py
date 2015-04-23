@@ -13,6 +13,7 @@ from flask import Flask
 # Create application object
 app = Flask(__name__)
 
+
 # Use decorator to link the function to a url
 @app.route("/")
 @app.route("/hello")
@@ -21,6 +22,12 @@ def hello_world():
         Define a view which return a string
     """
     return "Hello World"
+
+
+# Dynamic route
+@app.route("/test")
+def search():
+    return "Hello"
 
 
 if __name__ == '__main__':
