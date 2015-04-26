@@ -58,7 +58,7 @@ def login():
            request.form['password'] != app.config['PASSWORD']:
             error = 'Invalid Credentials. Please try again.'
         else:
-            flash("You were successfully logged in")
+            flash("You were successfully logged in.")
             session['logged_in'] = True
             return redirect(url_for('main'))
     return render_template("login.html", error=error)
@@ -97,7 +97,7 @@ def add():
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('You were logged out')
+    flash('You were logged out.')
     return redirect(url_for('login'))
 
 
