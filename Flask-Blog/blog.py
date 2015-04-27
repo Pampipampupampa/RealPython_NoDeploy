@@ -14,8 +14,9 @@ from functools import wraps
 ########################
 
 # Configuration files
-# Only works with full path (maybe a python3 bug ?)
-DATABASE = "/home/pampi/Documents/Courses/RealPython/Flask-Blog/blog.db"
+# First cd to Flask-Blog folder before running this server to get the right
+# database (the path begin at `pwd` command (current folder when script lauched))
+DATABASE = "blog.db"
 USERNAME = "admin"
 PASSWORD = "admin"
 SECRET_KEY = 'hard_to_guess'
