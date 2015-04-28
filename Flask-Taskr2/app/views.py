@@ -8,7 +8,9 @@ from flask import (Flask, render_template, request, session, flash, redirect,
                    url_for)
 from functools import wraps
 from flask.ext.sqlalchemy import SQLAlchemy
-from forms import AddTaskForm
+
+# Forms
+from forms import AddTaskForm, RegisterForm, LoginForm
 
 ########################
 #    Main Program :    #
@@ -24,7 +26,7 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 # Import tables
-from models import Task
+from models import Task, User
 
 
 def login_required(test):
@@ -36,6 +38,25 @@ def login_required(test):
             flash('You need to login first.')
             return redirect(url_for('login'))
     return wrapper
+
+
+@app.route('/register/', methods=['GET', 'POST'])
+def register():
+    error = None
+    form = RegisterForm(request.form)
+    if request.method == "POST":
+        if form.validate_on_submit():
+            new_user = User(form.name.data,
+                            form.email.data,
+                            form.password.data)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Thanks for registering. Please login.')
+            return redirect(url_for('login'))
+        else:
+            return render_template('register.html', form=form, error=error)
+    if request.method == "GET":
+        return render_template('register.html', form=form)
 
 
 @app.route('/', methods=['GET', 'POST'])

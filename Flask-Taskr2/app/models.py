@@ -13,7 +13,7 @@ class Task(db.Model):
         Use instances and init values to populate the table.
     """
 
-    __tablename__ = "task"
+    __tablename__ = "tasks"
 
     task_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
@@ -30,3 +30,26 @@ class Task(db.Model):
 
     def __repr__(self):
         return '<name {:r}>'.format(self.body)
+
+
+class User(db.Model):
+    """
+        Model representing the user table.
+        Use instances and init values to populate the table.
+    """
+
+    __tablename__ = "users"
+
+    user_id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
+    password = db.Column(db.String, nullable=False)
+
+    def __init__(self, name=None, email=None, password=None):
+        super().__init__()
+        self.name = name
+        self.email = email
+        self.password = password
+
+    def __repr__(self):
+        return '<User {:r}>'.format(self.name)

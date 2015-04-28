@@ -10,8 +10,6 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 DATABASE = "flask-taskr.db"
-USERNAME = "admin"
-PASSWORD = "admin"
 WTF_CSRF_ENABLED = True
 SECRET_KEY = "secret"
 
