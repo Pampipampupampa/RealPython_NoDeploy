@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+{% block content %}
+<h1>Welcome to Flask-Taksr.</h1>
+<h3>Please login to access your tasks list.</h3>
+<form method="post", action="/">
+    {{ form.csrf_token }}
+    <p>{{ form.name.label }}: {{ form.name }}&nbsp;&nbsp;{{ form.password.label }}: {{ form.password }}&nbsp;&nbsp;</p></p>
+    <input type="submit", value="Login">
+</form>
+<br>
+<p><em>Need an account? </em><a href="/register">Signup!!</a></p>
+{% endblock %}
