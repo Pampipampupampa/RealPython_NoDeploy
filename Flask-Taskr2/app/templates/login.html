@@ -1,12 +1,10 @@
-{% extends "template.html" %}
+{% extends "_base.html" %}
 {% block content %}
 <h1>Welcome to Flask-Taksr.</h1>
 <h3>Please login to access your tasks list.</h3>
 <form method="post", action="/">
-    <label for="username">Username: </label>
-    <input id="username" type="text", name="username", value="{{ request.form.username }}">
-    <label for="password">Password: </label>
-    <input id="password" type="password", name="password", value="{{ request.form.password }}">
+    {{ form.csrf_token }}
+    <p>{{ form.name.label }}: {{ form.name }}&nbsp;&nbsp;{{ form.password.label }}: {{ form.password }}&nbsp;&nbsp;</p></p>
     <input type="submit", value="Login">
 </form>
 <br>

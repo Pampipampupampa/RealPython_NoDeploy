@@ -1,8 +1,11 @@
 # -*- coding:Utf8 -*-
 
+
 """
     Flask tasks controller
 """
+
+import datetime
 
 from flask import (Flask, render_template, request, session, flash, redirect,
                    url_for)
@@ -12,6 +15,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 # Forms
 from forms import AddTaskForm, RegisterForm, LoginForm
 
+
 ########################
 #    Main Program :    #
 ########################
@@ -19,8 +23,8 @@ from forms import AddTaskForm, RegisterForm, LoginForm
 # Create application object
 app = Flask(__name__)
 
-# Populate internal dict with uppercase variables from config.py file.
-app.config.from_object('config')
+# Populate internal dict with uppercase variables from _config.py file.
+app.config.from_object('_config')
 
 # Create link between DB and SQLAlchemy and Flask
 db = SQLAlchemy(app)
@@ -61,17 +65,21 @@ def register():
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
+    error = None
+    form = LoginForm(request.form)
     if request.method == "POST":
-        if request.form['username'] != app.config["USERNAME"] or \
-           request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid Credentials. Please try again.'
-            return render_template("login.html", error=error)
+        if form.validate_on_submit():
+            user = User.query.filter_by(name=request.form['name']).first()
+            if user is not None and user.password == request.form["password"]:
+                flash("Welcome ! You were successfully logged in.")
+                session['logged_in'] = True
+                session['user_id'] = user.user_id
+                return redirect(url_for('tasks'))
+            else:
+                error = 'Invalid username or password. Please try again.'
         else:
-            flash("You were successfully logged in.")
-            session['logged_in'] = True
-            return redirect(url_for('tasks'))
-    if request.method == "GET":
-        return render_template("login.html")
+            error = 'Both fields are required.'
+    return render_template("login.html", form=form, error=error)
 
 
 @app.route('/tasks/')
@@ -93,7 +101,9 @@ def new_task():
             new_task = Task(form.name.data,
                             form.due_date.data,
                             form.priority.data,
-                            '1')
+                            datetime.datetime.utcnow(),
+                            '1',
+                            session["user_id"])
             db.session.add(new_task)
             db.session.commit()
             flash("New entry was successfully posted, Thanks.")
@@ -125,5 +135,6 @@ def delete_entry(task_id):
 @app.route('/logout/')
 def logout():
     session.pop('logged_in', None)
+    session.pop('user_id', None)
     flash('You were logged out.')
     return redirect(url_for('login'))

@@ -1,4 +1,4 @@
-{% extends 'template.html' %}
+{% extends '_base.html' %}
 {% block content %}
 <h1>Welcome to Flask-Taskr</h1>
 <a href="/logout">Logout</a>
@@ -8,36 +8,12 @@
         <tr>
             <form action=" {{ url_for('new_task') }} ", method="POST">
                 {{ form.csrf_token }}
-                <td>
-                    <label for="name">Task name:</label>
-                    <input id="name", name="name", type="text">
-                    &nbsp;
-                </td>
-                <td>
-                    <label for="due_date">Due Date: (dd/mm/yyyy)</label>
-                    <input id="due_date", name="due_date", type="text", width="120px">
-                    &nbsp;
-                </td>
-                <td>
-                    <label>Priority:</label>
-                    <select name="priority", width="100px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </td>
-                <td>
-                    &nbsp;
-                    &nbsp;
-                    <input class="button" type="submit" value="Save">
-                </td>
+                <p>
+                    {{ form.name.label }}: {{ form.name }}<br>
+                    {{ form.due_date.label }}:{{ form.due_date }}&nbsp;
+                    {{ form.priority.label }}: {{ form.priority }}
+                </p>
+                <p><input type="submit" value="Submit"></p>
             </form>
         </tr>
     </table>
@@ -52,19 +28,23 @@
                 <tr>
                     <th width="300px"><strong>Task Name</strong></th>
                     <th width="100px"><strong>Due Date</strong></th>
+                    <th width="100px"><strong>Posted Date</strong></th>
+                    <th width="50px"><strong>Posted By</strong></th>
                     <th width="50px"><strong>Priority</strong></th>
                     <th><strong>Actions</strong></th>
                 </tr>
             </thead>
-            {% for o in open_tasks %}
+            {% for task in open_tasks %}
             <tr>
-                <td width="300">{{ o.name }}</td>
-                <td width="100">{{ o.due_date }}</td>
-                <td width="50">{{ o.priority }}</td>
+                <td width="300">{{ task.name }}</td>
+                <td width="100">{{ task.due_date }}</td>
+                <td width="100px">{{ task.posted_date }}</td>
+                <td width="90px">{{ task.poster.name }}</td>
+                <td width="50px">{{ task.priority }}</td>
                 <td>
-                    <a href="{{ url_for('delete_entry', task_id=o.task_id) }}"> Delete</a>
+                    <a href="{{ url_for('delete_entry', task_id=task.task_id) }}"> Delete</a>
                     &nbsp;
-                    <a href="{{ url_for('complete', task_id=o.task_id) }}"> Mark as Complete</a>
+                    <a href="{{ url_for('complete', task_id=task.task_id) }}"> Mark as Complete</a>
                 </td>
             </tr>
             {% endfor %}
@@ -81,17 +61,21 @@
                 <tr>
                     <th width="300px"><strong>Task Name</strong></th>
                     <th width="100px"><strong>Due Date</strong></th>
+                    <th width="100px"><strong>Posted Date</strong></th>
+                    <th width="50px"><strong>Posted By</strong></th>
                     <th width="50px"><strong>Priority</strong></th>
                     <th><strong>Actions</strong></th>
                 </tr>
             </thead>
-            {% for o in closed_tasks %}
+            {% for task in closed_tasks %}
             <tr>
-                <td width="300">{{ o.name }}</td>
-                <td width="100">{{ o.due_date }}</td>
-                <td width="50">{{ o.priority }}</td>
+                <td width="300">{{ task.name }}</td>
+                <td width="100">{{ task.due_date }}</td>
+                <td width="100px">{{ task.posted_date }}</td>
+                <td width="90px">{{ task.poster.name }}</td>
+                <td width="50px">{{ task.priority }}</td>
                 <td>
-                    <a href="{{ url_for('delete_entry', task_id=o.task_id) }}"> Delete</a>
+                    <a href="{{ url_for('delete_entry', task_id=task.task_id) }}"> Delete</a>
                 </td>
             </tr>
             {% endfor %}
