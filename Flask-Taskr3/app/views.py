@@ -83,7 +83,7 @@ def register():
                 flash('Thanks for registering. Please login.')
                 return redirect(url_for('login'))
             except IntegrityError:
-                error = 'That username and/or password already exist.'
+                error = 'That username and/or email already exist.'
                 return render_template('register.html', form=form, error=error)
     return render_template('register.html', form=form)
 
@@ -156,6 +156,7 @@ def delete_entry(task_id):
 
 
 @app.route('/logout/')
+@login_required
 def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
