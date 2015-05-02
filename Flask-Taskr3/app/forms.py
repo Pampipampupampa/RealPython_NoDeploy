@@ -7,7 +7,7 @@
 
 from flask_wtf import Form
 from wtforms import TextField, DateField, IntegerField, SelectField, PasswordField
-from wtforms.validators import InputRequired, Length, EqualTo
+from wtforms.validators import InputRequired, Length, EqualTo, Email
 
 
 class AddTaskForm(Form):
@@ -32,7 +32,7 @@ class RegisterForm(Form):
     """
     name = TextField('Username', validators=[InputRequired(),
                      Length(min=6, max=25)])
-    email = TextField('Email', validators=[InputRequired(),
+    email = TextField('Email', validators=[InputRequired(), Email(),
                                            Length(min=6, max=40)])
     password = PasswordField('Password', validators=[InputRequired(),
                                                      Length(min=6, max=40)])
