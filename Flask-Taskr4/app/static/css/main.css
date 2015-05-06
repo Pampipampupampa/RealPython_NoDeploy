@@ -1,0 +1,25 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: #FFFFFF;
+}
+
+.footer {
+    padding-top: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 1em;
+}
+
+.flash {
+    font-size: 1.2em;
+    background: #BAE0FF;
+}
+
+.navbar, .navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+}
+
