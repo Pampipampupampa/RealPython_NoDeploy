@@ -1,9 +1,6 @@
 {% extends "_base.html" %}
 {% block content %}
-
-<h1>Welcome to Flask-Taksr.</h1>
 <h3>Please register to access your tasks list.</h3>
-
 <form method="POST", action="/register/">
     {{ form.csrf_token }}
     <p>
@@ -50,5 +47,6 @@
     <button class="btn btn-sm btn-success" type="submit">Register</button>
     <br>
 </form>
-<p><em>Already register ?.</em> Please click <a href="/">here</a> to login.</p>
+<br>
+<p><em>Already register ?</em> Please click <a href="/">here</a> to login.</p>
 {% endblock %}

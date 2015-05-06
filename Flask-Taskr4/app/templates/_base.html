@@ -8,12 +8,11 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <!-- <title>Welcome to FlaskTaskr!!!</title> -->
+        <title>Welcome to FlaskTaskr!!!</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-        <title>Welcome to FlaskTaskr!!</title>
     </head>
 
     <!-- Scripts -->
@@ -50,29 +49,40 @@
                 </div><!--/.nav-collapse -->
             </div>
         </div>
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1>
+                Welcome to Flask-Taskr
+                <br>
+                <span class="glyphicon glyphicon-file" style="color:#5cb85c">
+            </h1>
+        </div>
+
+        <!-- Main app -->
         <div class="container"></div>
             <div class="row">
-            <div class="col-md-6  col-md-offset-3">
-            <div class="content">
-                {% for message in get_flashed_messages() %}
-                    <div class="flash">{{ message }}</div>
-                {% endfor %}
-                {% if error %}
-                    <div class="error"><strong>Error: </strong>{{ error }}</div>
-                {% endif %}
-                {% block content %}
-                <!-- Here we can add data inside childs -->
-                {% endblock %}
-            </div>
+                <div class="col-md-6  col-md-offset-3">
+                    <div class="content">
+                        {% for message in get_flashed_messages() %}
+                            <div class="flash">{{ message }}</div>
+                        {% endfor %}
+                        {% if error %}
+                            <div class="error"><strong>Error: </strong>{{ error }}</div>
+                        {% endif %}
+                        {% block content %}
+                        <!-- Here we can add data inside childs -->
+                        {% endblock %}
+                    </div>
 
-            <!-- Footer -->
-            <div class="footer">
-                <hr>
-                <p>
-                    &copy; <a href="https://www.realpython.com">Real Python</a>
-                </p>
-            </div>
-            </div>
+                    <!-- Footer -->
+                    <div class="footer">
+                        <hr>
+                        <p>
+                            &copy; <a href="https://www.realpython.com">Real Python</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div><!-- /.container -->
     </body>
