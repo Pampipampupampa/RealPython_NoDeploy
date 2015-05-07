@@ -6,17 +6,19 @@ import unittest
 
 from views import app, db
 from _config import basedir
-from models import User
+from models import User, Task
 
 
 # Database used for testing
 TEST_DB = 'test.db'
 
 
-class AllTests(unittest.TestCase):
+class TasksTests(unittest.TestCase):
     """
-        Unit test.
+        Tasks unit test.
     """
+
+    # USEFUL FUNCTIONS
 
     def setUp(self):
         """
@@ -37,11 +39,12 @@ class AllTests(unittest.TestCase):
         """
         db.drop_all()
 
-    def login(self, name, password):
+    def login(self, name='Jérémy', password='python'):
         return self.app.post('/', data=dict(name=name, password=password),
                              follow_redirects=True)
 
-    def register(self, name, email, password, confirm):
+    def register(self, name='Jérémy', email='mail@monMail.com',
+                 password='python', confirm='python'):
         return self.app.post('register/', data=dict(name=name, password=password,
                                                     email=email, confirm=confirm),
                              follow_redirects=True)
@@ -49,8 +52,15 @@ class AllTests(unittest.TestCase):
     def logout(self):
         return self.app.get('logout/', follow_redirects=True)
 
-    def create_user(self, name, email, password):
+    def create_user(self, name='Jérémy', email='mail@monMail.com',
+                    password='python'):
         new_user = User(name=name, email=email, password=password)
+        db.session.add(new_user)
+        db.session.commit()
+
+    def create_admin_user(self, name='Superman', email='admin@monMail.com',
+                          password='allpowerful'):
+        new_user = User(name=name, email=email, password=password, role='admin')
         db.session.add(new_user)
         db.session.commit()
 
@@ -61,63 +71,11 @@ class AllTests(unittest.TestCase):
                                        posted_date='02/04/2014', status='1'),
                              follow_redirects=True)
 
-# TEST LOGIN PAGE
-
-    def test_form_is_present_on_login_page(self):
-        response = self.app.get('/')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Please sign in to access your tasks list.', response.data)
-
-    def test_users_cannot_login_unless_registered(self):
-        response = self.login('foo', 'bar')
-        self.assertIn(b'Invalid username or password.', response.data)
-
-    def test_users_can_login(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        response = self.login('Jérémy', 'python')
-        self.assertIn(b'Welcome ! You were successfully logged in.', response.data)
-
-    def test_invalid_form_data(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        response = self.login('alert("alert box!");', 'foo')
-        self.assertIn(b'Invalid username or password.', response.data)
-
-# TEST REGISTER PAGE
-
-    def test_form_is_present_on_register_page(self):
-        response = self.app.get('register/')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Please register to access your tasks list.', response.data)
-
-    def test_user_registeration(self):
-        self.app.get('register/', follow_redirects=True)
-        response = self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.assertIn(b'Thanks for registering. Please login.', response.data)
-
-    def test_user_registeration_error(self):
-        self.app.get('register/', follow_redirects=True)
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.app.get('register/', follow_redirects=True)
-        response = self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.assertIn(b'That username and/or email already exist.', response.data)
-
-# TEST LOGOUT PAGE
-
-    def test_logged_in_users_can_logout(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.login('Jérémy', 'python')
-        response = self.logout()
-        self.assertIn(b'You were logged out.', response.data)
-
-    def test_not_logged_in_users_cannot_logout(self):
-        response = self.logout()
-        self.assertNotIn(b'You were logged out.', response.data)
-
-# TEST TASK PAGE
+    # TEST TASK PAGE
 
     def test_logged_in_users_can_access_tasks_page(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.login('Jérémy', 'python')
+        self.register()
+        self.login()
         response = self.app.get('tasks/')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Add a new task:', response.data)
@@ -127,15 +85,15 @@ class AllTests(unittest.TestCase):
         self.assertIn(b'You need to login first.', response.data)
 
     def test_users_can_add_tasks(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.login('Jérémy', 'python')
+        self.register()
+        self.login()
         self.app.get('tasks/', follow_redirects=True)
         response = self.create_task()
         self.assertIn(b"New entry was successfully posted, Thanks.", response.data)
 
     def test_users_cannot_add_tasks_when_error(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.login('Jérémy', 'python')
+        self.register()
+        self.login()
         self.app.get('tasks/', follow_redirects=True)
         response = self.app.post('add/', data=dict(name='Go to the bank',
                                                    due_date='',
@@ -146,8 +104,8 @@ class AllTests(unittest.TestCase):
         self.assertIn(b'This field is required.', response.data)
 
     def test_users_can_complete_tasks(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.login('Jérémy', 'python')
+        self.register()
+        self.login()
         self.app.get('tasks/', follow_redirects=True)
         self.create_task()
         # First user have user_id == 1
@@ -155,8 +113,8 @@ class AllTests(unittest.TestCase):
         self.assertIn(b"The task was marked as complete. Well done !", response.data)
 
     def test_users_can_delete_tasks(self):
-        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
-        self.login('Jérémy', 'python')
+        self.register()
+        self.login()
         self.app.get('tasks/', follow_redirects=True)
         self.create_task()
         # First user have user_id == 1
@@ -165,8 +123,8 @@ class AllTests(unittest.TestCase):
 
     # Must failed because any user can delete any task
     def test_users_cannot_complete_tasks_that_are_not_created_by_them(self):
-        self.create_user('Jérémy', 'mail@monMail.com', 'python')
-        self.login('Jérémy', 'python')
+        self.create_user()
+        self.login()
         self.app.get('tasks/', follow_redirects=True)
         self.create_task()
         self.logout()
@@ -175,6 +133,55 @@ class AllTests(unittest.TestCase):
         self.app.get('tasks/', follow_redirects=True)
         response = self.app.get("complete/1/", follow_redirects=True)
         self.assertNotIn(b'The task was marked as complete. Well done !', response.data)
+        self.assertIn(b'You can only update tasks that belong to you.', response.data)
+
+    def test_users_cannot_delete_tasks_that_are_not_created_by_them(self):
+        self.create_user()
+        self.login()
+        self.app.get('tasks/', follow_redirects=True)
+        self.create_task()
+        self.logout()
+        self.create_user('Fletcher', 'fletcher@realpython.com', 'python101')
+        self.login('Fletcher', 'python101')
+        self.app.get('tasks/', follow_redirects=True)
+        response = self.app.get("delete/1/", follow_redirects=True)
+        self.assertIn(b'You can only delete tasks that belong to you.', response.data)
+
+    def test_admin_users_can_complete_tasks_that_are_not_created_by_them(self):
+        self.create_user()
+        self.login()
+        self.app.get('tasks/', follow_redirects=True)
+        self.create_task()
+        self.logout()
+        self.create_admin_user()
+        self.login('Superman', 'allpowerful')
+        self.app.get('tasks/', follow_redirects=True)
+        response = self.app.get("complete/1/", follow_redirects=True)
+        self.assertNotIn(b'You can only update tasks that belong to you.', response.data)
+
+    def test_admin_users_can_delete_tasks_that_are_not_created_by_them(self):
+        self.create_user()
+        self.login()
+        self.app.get('tasks/', follow_redirects=True)
+        self.create_task()
+        self.logout()
+        self.create_admin_user()
+        self.login('Superman', 'allpowerful')
+        self.app.get('tasks/', follow_redirects=True)
+        response = self.app.get("delete/1/", follow_redirects=True)
+        self.assertNotIn(b'You can only delete tasks that belong to you.', response.data)
+
+    def test_string_representation_of_the_task_object(self):
+        from datetime import date
+        # Foreign key constraint active by default on my sqlite3 build
+        # Need to add first a user before addind a task
+        db.session.add(User("Tester", "mail@mail.fr", "python"))
+        db.session.add(Task("Test", date(2015, 1, 22), 10, date(2015, 1, 23),
+                            1, 1))
+        db.session.commit()
+        tasks = db.session.query(Task).all()
+        for task in tasks:
+            self.assertEqual(task.name, 'Test')
 
 
 # Run all tests
