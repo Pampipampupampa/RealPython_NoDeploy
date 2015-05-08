@@ -1,0 +1,47 @@
+body {
+    padding-top: 20px;
+    background: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arvo', Georgia, Times, serif;
+}
+
+p, div {
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+
+.footer {
+    padding-top: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 1em;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+
+.flash {
+    font-size: 1.2em;
+    background: #BAE0FF;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+
+.navbar, .navbar-brand {
+    font-size: 20px;
+    background: #313131;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+.jumbotron h1 {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}

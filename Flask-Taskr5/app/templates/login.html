@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+{% block content %}
+<h3>Please sign in to access your tasks list.</h3>
+<form class="form-signin" role="form" method="post", action="/">
+    {{ form.csrf_token }}
+    <p>
+        {{ form.name(Placeholder='name')}}
+        {% if form.name.errors %}
+        <span class='error'>
+            {% for error in form.name.errors %}
+            {{ error }}
+            {% endfor %}
+        </span>
+        {% endif %}
+    </p>
+    <p>
+        {{ form.password(Placeholder='password')}}
+        {% if form.password.errors %}
+        <span class='error'>
+            {% for error in form.password.errors %}
+            {{ error }}
+            {% endfor %}
+        </span>
+        {% endif %}
+    </p>
+    <button class="btn btn-sm btn-success" type="submit">Sign In</button>
+    <br>
+</form>
+<br>
+<p><em>Need an account ?</em><a href="/register"> Signup!!</a></p>
+{% endblock %}
