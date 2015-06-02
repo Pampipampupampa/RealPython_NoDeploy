@@ -1,0 +1,109 @@
+{% extends '_base.html' %}
+{% block content %}
+<a href="/logout">Logout</a>
+<div class="add-task">
+    <h3>Add a new task:</h3>
+    <table>
+        <tr>
+            <form action=" {{ url_for('tasks.new_task') }} ", method="POST">
+                {{ form.csrf_token }}
+                <p>
+                    {{ form.name(Placeholder='name')}}
+                    {% if form.name.errors %}
+                    <span class='error'>
+                        {% for error in form.name.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </p>
+                <p>
+                    {{ form.due_date(Placeholder='due date (DD/MM/YYYY)')}}
+                    {% if form.due_date.errors %}
+                    <span class='error'>
+                        {% for error in form.due_date.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </p>
+                <p>
+                    {{ form.priority(Placeholder='priority')}}
+                    {% if form.priority.errors %}
+                    <span class='error'>
+                        {% for error in form.priority.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </p>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+        </tr>
+    </table>
+</div>
+<div class="entries">
+    <br>
+    <br>
+    <h2>Open tasks:</h2>
+    <div class="datagrid">
+        <table>
+            <thead>
+                <tr>
+                    <th width="200px"><strong>Task Name</strong></th>
+                    <th width="100px"><strong>Due Date</strong></th>
+                    <th width="100px"><strong>Posted Date</strong></th>
+                    <th width="60px"><strong>Priority</strong></th>
+                    <th width="90px"><strong>Posted By</strong></th>
+                    <th><strong>Actions</strong></th>
+                </tr>
+            </thead>
+            {% for task in open_tasks %}
+            <tr>
+                <td width="200px">{{ task.name }}</td>
+                <td width="100px">{{ task.due_date }}</td>
+                <td width="100px">{{ task.posted_date }}</td>
+                <td width="60px">{{ task.priority }}</td>
+                <td width="120px">{{ task.poster.name }}</td>
+                <td>
+                    <a href="{{ url_for('tasks.delete_entry', task_id=task.task_id) }}"> Delete</a>
+                    &nbsp;
+                    <a href="{{ url_for('tasks.complete', task_id=task.task_id) }}"> Mark as Complete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+    <br>
+</div>
+<div class="entries">
+    <h2>Closed tasks:</h2>
+    <div class="datagrid">
+        <table>
+            <thead>
+                <tr>
+                    <th width="200px"><strong>Task Name</strong></th>
+                    <th width="100px"><strong>Due Date</strong></th>
+                    <th width="100px"><strong>Posted Date</strong></th>
+                    <th width="60px"><strong>Priority</strong></th>
+                    <th width="120px"><strong>Posted By</strong></th>
+                    <th><strong>Actions</strong></th>
+                </tr>
+            </thead>
+            {% for task in closed_tasks %}
+            <tr>
+                <td width="200px">{{ task.name }}</td>
+                <td width="100px">{{ task.due_date }}</td>
+                <td width="100px">{{ task.posted_date }}</td>
+                <td width="60px">{{ task.priority }}</td>
+                <td width="120px">{{ task.poster.name }}</td>
+                <td>
+                    <a href="{{ url_for('tasks.delete_entry', task_id=task.task_id) }}"> Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
