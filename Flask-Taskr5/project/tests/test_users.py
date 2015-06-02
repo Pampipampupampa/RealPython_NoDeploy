@@ -4,9 +4,9 @@
 import os
 import unittest
 
-from views import app, db
-from _config import basedir
-from models import User
+from project import app, db
+from project._config import basedir
+from project.models import User
 
 
 # Database used for testing
@@ -156,6 +156,15 @@ class AllTests(unittest.TestCase):
         response = self.logout()
         self.assertNotIn(b'You were logged out.', response.data)
 
+
+# TEST REPR
+
+    def test_user_repr(self):
+        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')
+        db.session.commit()
+        users = db.session.query(User).all()
+        for user in users:
+            self.assertEqual(repr(user), "<User Jérémy>")
 
 # Run all tests
 if __name__ == '__main__':
