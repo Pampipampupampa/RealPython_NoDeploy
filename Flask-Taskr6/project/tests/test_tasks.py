@@ -197,6 +197,61 @@ class TasksTests(unittest.TestCase):
         for task in tasks:
             self.assertEqual(repr(task), "<Task Test>")
 
+
+# TEST USER FEATURES
+
+    def test_task_template_displays_logged_in_user_name(self):
+        self.register()
+        self.login()
+        response = self.app.get('tasks/', follow_redirects=True)
+        # Jérémy as binary string (unicode currently not supported)
+        self.assertIn(b'J\xc3\xa9r\xc3\xa9my', response.data)
+
+
+# TEST ACTIONS DISPLAYED
+
+    def test_users_cannot_see_task_modify_links_for_tasks_not_created_by_them(self):
+        self.register()
+        self.login()
+        self.app.get("tasks/", follow_redirects=True)
+        self.create_task()
+        self.logout()
+        self.register(name='Escroc', email='mail2@monMail.com',
+                      password='python')
+        self.login(name='Escroc', password='python')
+        response = self.app.get("tasks/", follow_redirects=True)
+        self.assertNotIn(b'Mark as complete', response.data)
+        self.assertNotIn(b'Delete', response.data)
+
+    def test_users_can_see_task_modify_links_for_tasks_created_by_them(self):
+        self.register()
+        self.login()
+        self.app.get("tasks/", follow_redirects=True)
+        self.create_task()
+        self.logout()
+        self.register(name='Escroc', email='mail2@monMail.com',
+                      password='python')
+        self.login(name='Escroc', password='python')
+        self.app.get("tasks/", follow_redirects=True)
+        response = self.create_task()
+        self.assertIn(b'complete/2/', response.data)
+        self.assertIn(b'delete/2/', response.data)
+
+    def test_admin_users_can_see_task_modify_links_for_all_tasks(self):
+        self.register()
+        self.login()
+        self.app.get('tasks/', follow_redirects=True)
+        self.create_task()
+        self.logout()
+        self.create_admin_user()
+        self.login('Superman', 'allpowerful')
+        self.app.get('tasks/', follow_redirects=True)
+        response = self.create_task()
+        self.assertIn(b'complete/1/', response.data)
+        self.assertIn(b'delete/1/', response.data)
+        self.assertIn(b'complete/2/', response.data)
+        self.assertIn(b'delete/2/', response.data)
+
 # Run all tests
 if __name__ == '__main__':
     unittest.main()

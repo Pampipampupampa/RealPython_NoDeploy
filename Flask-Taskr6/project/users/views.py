@@ -70,6 +70,7 @@ def login():
                 session['logged_in'] = True
                 session['user_id'] = user.user_id
                 session['role'] = user.role
+                session['name'] = user.name
                 return redirect(url_for('tasks.tasks'))
             else:
                 error = 'Invalid username or password. Please try again.'
@@ -82,5 +83,6 @@ def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
     session.pop('role', None)
+    session.pop('name', None)
     flash('You were logged out.')
     return redirect(url_for('users.login'))

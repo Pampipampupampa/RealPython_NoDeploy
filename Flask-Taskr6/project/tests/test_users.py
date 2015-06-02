@@ -166,6 +166,7 @@ class AllTests(unittest.TestCase):
         for user in users:
             self.assertEqual(repr(user), "<User Jérémy>")
 
+
 # Run all tests
 if __name__ == '__main__':
     unittest.main()

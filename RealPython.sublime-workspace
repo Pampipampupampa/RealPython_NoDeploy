@@ -519,6 +519,17 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "# -*- coding:Utf8 -*-\n\n\nimport os\nimport unittest\n\nfrom project import app, db\nfrom project._config import basedir\nfrom project.models import User\n\n\n# Database used for testing\nTEST_DB = 'test.db'\n\n\nclass AllTests(unittest.TestCase):\n    \"\"\"\n        Users unit test.\n    \"\"\"\n\n# USEFUL FUNCTIONS\n\n    def setUp(self):\n        \"\"\"\n            Executing prior to each tasks.\n            Create environnement where tests while be executing.\n        \"\"\"\n        app.config['TESTING'] = True\n        app.config['WTF_CSRF_ENABLED'] = False\n        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \\\n                                                os.path.join(basedir, TEST_DB)\n        self.app = app.test_client()\n        db.create_all()\n\n    def tearDown(self):\n        \"\"\"\n            Executing after to each tasks.\n            Clean environnement.\n        \"\"\"\n        db.drop_all()\n\n    def login(self, name='Jérémy', password='python'):\n        return self.app.post('/', data=dict(name=name, password=password),\n                             follow_redirects=True)\n\n    def register(self, name='Jérémy', email='mail@monMail.com',\n                 password='python', confirm='python'):\n        return self.app.post('register/', data=dict(name=name, password=password,\n                                                    email=email, confirm=confirm),\n                             follow_redirects=True)\n\n    def logout(self):\n        return self.app.get('logout/', follow_redirects=True)\n\n    def create_user(self, name='Jérémy', email='mail@monMail.com',\n                    password='python'):\n        new_user = User(name=name, email=email, password=password)\n        db.session.add(new_user)\n        db.session.commit()\n\n    def create_task(self):\n        return self.app.post('add/',\n                             data=dict(name='Go to the bank',\n                                       due_date='02/05/2014', priority='1',\n                                       posted_date='02/04/2014', status='1'),\n                             follow_redirects=True)\n\n# TEST LOGIN PAGE\n\n    def test_form_is_present_on_login_page(self):\n        response = self.app.get('/')\n        self.assertEqual(response.status_code, 200)\n        self.assertIn(b'Please sign in to access your tasks list.', response.data)\n\n    def test_users_cannot_login_unless_registered(self):\n        response = self.login()\n        self.assertIn(b'Invalid username or password.', response.data)\n\n    def test_users_can_login(self):\n        self.register()\n        response = self.login()\n        self.assertIn(b'Welcome ! You were successfully logged in.', response.data)\n\n    def test_invalid_form_data(self):\n        self.register()\n        response = self.login('not me', 'foo')\n        self.assertIn(b'Invalid username or password.', response.data)\n\n# TEST REGISTER PAGE\n\n    def test_users_can_register(self):\n        new_user = User('Jérémy', 'mail@monMail.com', \"python\")\n        db.session.add(new_user)\n        db.session.commit()\n        test = db.session.query(User).all()\n        for t in test:\n            t.name\n        assert t.name == \"Jérémy\"\n\n    def test_form_is_present_on_register_page(self):\n        response = self.app.get('register/')\n        self.assertEqual(response.status_code, 200)\n        self.assertIn(b'Please register to access your tasks list.', response.data)\n\n    def test_user_registeration(self):\n        self.app.get('register/', follow_redirects=True)\n        response = self.register()\n        self.assertIn(b'Thanks for registering. Please login.', response.data)\n\n    def test_user_registeration_error(self):\n        self.app.get('register/', follow_redirects=True)\n        self.register()\n        self.app.get('register/', follow_redirects=True)\n        response = self.register()\n        self.assertIn(b'That username and/or email already exist.', response.data)\n\n    def test_duplicate_user_registeration_throws_error(self):\n        self.register()\n        response = self.register()\n        self.assertIn(b'That username and/or email already exist.', response.data)\n\n    def test_user_login_field_errors(self):\n            # name empty\n            response = self.app.post('/', data=dict(name='', password='python101'),\n                                     follow_redirects=True)\n            self.assertIn(b'This field is required.', response.data)\n            # password empty\n            response = self.app.post('/', data=dict(name='Jérémy', password=''),\n                                     follow_redirects=True)\n            self.assertIn(b'This field is required.', response.data)\n\n    def test_string_reprsentation_of_the_user_object(self):\n        db.session.add(User('Jérémy', 'mail@monMail.com', 'python'))\n        db.session.commit()\n        users = db.session.query(User).all()\n        for user in users:\n            self.assertEqual(user.name, 'Jérémy')\n\n    def test_default_user_role(self):\n        db.session.add(User('Jérémy', 'mail@monMail.com', 'python'))\n        db.session.commit()\n        users = db.session.query(User).all()\n        for user in users:\n            self.assertEqual(user.role, 'user')\n\n\n# TEST LOGOUT PAGE\n\n    def test_logged_in_users_can_logout(self):\n        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')\n        self.login('Jérémy', 'python')\n        response = self.logout()\n        self.assertIn(b'You were logged out.', response.data)\n\n    def test_not_logged_in_users_cannot_logout(self):\n        response = self.logout()\n        self.assertNotIn(b'You were logged out.', response.data)\n\n\n# TEST REPR\n\n    def test_user_repr(self):\n        self.register('Jérémy', 'mail@monMail.com', 'python', 'python')\n        db.session.commit()\n        users = db.session.query(User).all()\n        for user in users:\n            self.assertEqual(repr(user), \"<User Jérémy>\")\n\n\n# TEST ACTIONS DISPLAYED\n    \n    def test_users_cannot_see_task_modify_links_for_tasks_not_created_by_them(self):\n        self.register()\n        self.login()\n        self.app.get(\"tasks/\", follow_redirects=True)\n        self.create_task()\n        self.logout()\n        self.register()\n\n# Run all tests\nif __name__ == '__main__':\n    unittest.main()\n",
+			"file": "Flask-Taskr6/project/tests/test_users.py",
+			"file_size": 5931,
+			"file_write_time": 130777007135919380,
+			"settings":
+			{
+				"buffer_size": 6194,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -544,9 +555,25 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "pyr",
+		"last_filter": "preuse",
 		"selected_items":
 		[
+			[
+				"preuse",
+				"Preferences: Settings - User"
+			],
+			[
+				"as",
+				"Anaconda: Show error list"
+			],
+			[
+				"prede",
+				"Preferences: Settings - Default"
+			],
+			[
+				"use",
+				"Preferences: Settings - User"
+			],
 			[
 				"pyr",
 				"SublimeREPL: Python - RUN current file"
@@ -554,10 +581,6 @@
 			[
 				"mar",
 				"Build With: Markdown"
-			],
-			[
-				"as",
-				"Anaconda: Show error list"
 			],
 			[
 				"a",
@@ -736,13 +759,29 @@
 	"expanded_folders":
 	[
 		"/home/pampi/Documents/Courses/RealPython",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr4/app",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users"
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests"
 	],
 	"file_history":
 	[
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tasks/views.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates/_base.html",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_tasks.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/test.db",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/users/views.py",
+		"/home/pampi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/templates/tasks.html",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tests/test_tasks.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tests/test_users.py",
+		"/home/pampi/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/db_create.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/models.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/run.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/__init__.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/templates/_base.html",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users/views.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks/views.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks/forms.py",
@@ -750,11 +789,9 @@
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users/forms.py",
 		"/home/pampi/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users/__init__.py",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/__init__.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks/__init__.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/.coverage",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/db_create.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/app/forms.py",
 		"/home/pampi/Documents/Courses/Algorithms/Algorithm/DataAlgorithm.whtt",
 		"/home/pampi/Documents/Projects/FromTerroir_database/.gitignore",
@@ -769,7 +806,6 @@
 		"/tmp/test_docopt.py",
 		"/home/pampi/Documents/Projects/FromTerroir_database/Data/dict_data_conditionnement.csv",
 		"/home/pampi/.config/sublime-text-3/Packages/PowerCursors/Default (Linux).sublime-keymap",
-		"/home/pampi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/Orthogonalization_problems.py",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/vec.py",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/triangular.py",
@@ -858,23 +894,11 @@
 		"/home/pampi/Documents/Language/Python/Cours-Python/Library/vector2d.py",
 		"/home/pampi/Documents/Other/Sauvegarde/README.md",
 		"/home/pampi/Documents/Other/Sauvegarde/Python3Libs/pipPython3Libs",
-		"/home/pampi/Documents/Other/Sauvegarde/Python3Libs/python3libs",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/triangular.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Untitled Folder/vec.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/test_vec.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Vector_problems.py",
-		"/home/pampi/Downloads/Le guide ultime et définitif sur la programmation orientée objet en Python à l’usage des débutants qui sont rassurés par les textes détaillés qui prennent le temps de tout expliquer. Partie 2.   Sam & Max.html",
-		"/D/Github/Projets/Publications/SolarCombisystem/abstract.tex",
-		"/D/Github/Projets/Publications/SolarCombisystem/Abstract/abstract.tex",
-		"/D/Github/Projets/Publications/Publication_projects.sublime-project",
-		"/D/Github/Projets/SolisArt/Rapport/2014_12_09/production_solaire.tex",
-		"/D/Github/Projets/IGC/Rapport/Plafond Rafraichissant/20150129/README.md",
-		"/D/Github/Projets/SolisArt/Rapport/2014_11_04/SolisArt_report.tex",
-		"/D/Github/Projets/IGC/Rapport/Plafond Rafraichissant/20150129/IGC_tache1-1.tex"
+		"/home/pampi/Documents/Other/Sauvegarde/Python3Libs/python3libs"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
@@ -888,6 +912,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"user",
+			"views",
+			"get_flashed_messages",
+			"Fla",
+			"flash_errors",
+			"views",
+			"url_for",
+			"url",
 			"InputRequired",
 			"url_for",
 			"app",
@@ -1007,15 +1039,7 @@
 			"produit",
 			"vin",
 			"old",
-			"INTEGER PRIMARY KEY",
-			"cascade",
-			"limit",
-			"limi",
-			"None",
-			"\"cmd\"",
-			"origine",
-			"prod",
-			"function="
+			"INTEGER PRIMARY KEY"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1039,8 +1063,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Flask-Taskr6/project/tests/test_users.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6128,
+								6128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 70.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1104,6 +1159,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"6temba",
+				"Flask-Taskr6/project/templates/_base.html"
+			],
+			[
+				"6useviw",
+				"Flask-Taskr6/project/users/views.py"
+			],
+			[
+				"6tasksv",
+				"Flask-Taskr6/project/tasks/views.py"
+			],
 			[
 				"pyr",
 				"SolisArt_script\\Reader\\Plotters\\parameters.py"
