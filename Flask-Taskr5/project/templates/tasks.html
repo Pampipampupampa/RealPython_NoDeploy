@@ -5,7 +5,7 @@
     <h3>Add a new task:</h3>
     <table>
         <tr>
-            <form action=" {{ url_for('new_task') }} ", method="POST">
+            <form action=" {{ url_for('tasks.new_task') }} ", method="POST">
                 {{ form.csrf_token }}
                 <p>
                     {{ form.name(Placeholder='name')}}
@@ -18,7 +18,7 @@
                     {% endif %}
                 </p>
                 <p>
-                    {{ form.due_date(Placeholder='due date')}}
+                    {{ form.due_date(Placeholder='due date (DD/MM/YYYY)')}}
                     {% if form.due_date.errors %}
                     <span class='error'>
                         {% for error in form.due_date.errors %}
@@ -66,9 +66,9 @@
                 <td width="60px">{{ task.priority }}</td>
                 <td width="120px">{{ task.poster.name }}</td>
                 <td>
-                    <a href="{{ url_for('delete_entry', task_id=task.task_id) }}"> Delete</a>
+                    <a href="{{ url_for('tasks.delete_entry', task_id=task.task_id) }}"> Delete</a>
                     &nbsp;
-                    <a href="{{ url_for('complete', task_id=task.task_id) }}"> Mark as Complete</a>
+                    <a href="{{ url_for('tasks.complete', task_id=task.task_id) }}"> Mark as Complete</a>
                 </td>
             </tr>
             {% endfor %}
@@ -99,7 +99,7 @@
                 <td width="60px">{{ task.priority }}</td>
                 <td width="120px">{{ task.poster.name }}</td>
                 <td>
-                    <a href="{{ url_for('delete_entry', task_id=task.task_id) }}"> Delete</a>
+                    <a href="{{ url_for('tasks.delete_entry', task_id=task.task_id) }}"> Delete</a>
                 </td>
             </tr>
             {% endfor %}

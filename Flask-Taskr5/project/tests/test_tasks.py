@@ -4,9 +4,9 @@
 import os
 import unittest
 
-from views import app, db
-from _config import basedir
-from models import User, Task
+from project import app, db
+from project._config import basedir
+from project.models import User, Task
 
 
 # Database used for testing
@@ -71,7 +71,7 @@ class TasksTests(unittest.TestCase):
                                        posted_date='02/04/2014', status='1'),
                              follow_redirects=True)
 
-    # TEST TASK PAGE
+# TEST TASK PAGE AS NORMAL USER
 
     def test_logged_in_users_can_access_tasks_page(self):
         self.register()
@@ -121,7 +121,6 @@ class TasksTests(unittest.TestCase):
         response = self.app.get('delete/1/', follow_redirects=True)
         self.assertIn(b"The task was deleted. Why not add a new one?", response.data)
 
-    # Must failed because any user can delete any task
     def test_users_cannot_complete_tasks_that_are_not_created_by_them(self):
         self.create_user()
         self.login()
@@ -147,6 +146,8 @@ class TasksTests(unittest.TestCase):
         response = self.app.get("delete/1/", follow_redirects=True)
         self.assertIn(b'You can only delete tasks that belong to you.', response.data)
 
+
+# TEST TASK PAGE AS ADMIN
     def test_admin_users_can_complete_tasks_that_are_not_created_by_them(self):
         self.create_user()
         self.login()
@@ -183,6 +184,18 @@ class TasksTests(unittest.TestCase):
         for task in tasks:
             self.assertEqual(task.name, 'Test')
 
+
+# TEST REPR
+
+    def test_task_repr(self):
+        from datetime import date
+        db.session.add(User("Tester", "mail@mail.fr", "python"))
+        db.session.add(Task("Test", date(2015, 1, 22), 10, date(2015, 1, 23),
+                            1, 1))
+        db.session.commit()
+        tasks = db.session.query(Task).all()
+        for task in tasks:
+            self.assertEqual(repr(task), "<Task Test>")
 
 # Run all tests
 if __name__ == '__main__':

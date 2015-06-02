@@ -1,0 +1,1153 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nom",
+				"nom_region"
+			],
+			[
+				"log",
+				"log_path	statement"
+			],
+			[
+				"class",
+				"class	New Class Py3"
+			],
+			[
+				"errors",
+				"error_str	statement"
+			],
+			[
+				"csvfile",
+				"csv_file"
+			],
+			[
+				"db",
+				"db_file"
+			],
+			[
+				"d_",
+				"d_vals"
+			],
+			[
+				"d",
+				"d_vals	forstmt"
+			],
+			[
+				"cond",
+				"conditionnement"
+			],
+			[
+				"update",
+				"update_time_v"
+			],
+			[
+				"LOG_s",
+				"LOG_specialite"
+			],
+			[
+				"su",
+				"such"
+			],
+			[
+				"is",
+				"is_independent"
+			],
+			[
+				"la",
+				"label_list	param"
+			],
+			[
+				"atan",
+				"atan2	function"
+			],
+			[
+				"imag",
+				"image_mat_util	module"
+			],
+			[
+				"tr",
+				"triangular	module"
+			],
+			[
+				"in",
+				"independent"
+			],
+			[
+				"The",
+				"The_Basis_problems	module"
+			],
+			[
+				"try",
+				"try	Try/Except Py3"
+			],
+			[
+				"bit",
+				"bits2str	function"
+			],
+			[
+				"corr",
+				"codewords_corrupted_matrix"
+			],
+			[
+				"fin",
+				"find_error_matrix"
+			],
+			[
+				"col",
+				"coldict2mat	function"
+			],
+			[
+				"mat",
+				"mat2coldict"
+			],
+			[
+				"ma",
+				"mat2rowdict	function"
+			],
+			[
+				"coord",
+				"coords	forflow"
+			],
+			[
+				"No",
+				"No"
+			],
+			[
+				"p3",
+				"p3_v	statement"
+			],
+			[
+				"p2",
+				"p2_v	statement"
+			],
+			[
+				"p1_",
+				"p1_v	statement"
+			],
+			[
+				"enc",
+				"economy"
+			],
+			[
+				"diag",
+				"diag_P"
+			],
+			[
+				"dia",
+				"diag_P"
+			],
+			[
+				"csv",
+				"csv_in	statement"
+			],
+			[
+				"con",
+				"consommation"
+			],
+			[
+				"to",
+				"totales"
+			],
+			[
+				"arE",
+				"area_E"
+			],
+			[
+				"conv",
+				"conv_dict"
+			],
+			[
+				"Re",
+				"Rendement"
+			],
+			[
+				"di",
+				"diag_B"
+			],
+			[
+				"barc",
+				"bar_cumA"
+			],
+			[
+				"bar",
+				"bar_cumC"
+			],
+			[
+				"linTE",
+				"line_TE"
+			],
+			[
+				"cap",
+				"captable"
+			],
+			[
+				"bot",
+				"box_Tbal"
+			],
+			[
+				"line_T",
+				"line_TE"
+			],
+			[
+				"trea",
+				"treat_file"
+			],
+			[
+				"sta",
+				"start_times"
+			],
+			[
+				"fram",
+				"frame_meteoFrance	statement"
+			],
+			[
+				"filena",
+				"files_names	statement"
+			],
+			[
+				"startti",
+				"start_times	statement"
+			],
+			[
+				"fra",
+				"frame_action	param"
+			],
+			[
+				"na",
+				"file_name"
+			],
+			[
+				"filen",
+				"file_name	statement"
+			],
+			[
+				"start",
+				"start_time	statement"
+			],
+			[
+				"satt",
+				"start_time	statement"
+			],
+			[
+				"stati",
+				"start_time"
+			],
+			[
+				"file",
+				"file_name	statement"
+			],
+			[
+				"base_",
+				"base_time"
+			],
+			[
+				"skip",
+				"skiprows	param"
+			],
+			[
+				"prin",
+				"print	function"
+			],
+			[
+				"sho",
+				"short_names	statement"
+			],
+			[
+				"index",
+				"index_col	param"
+			],
+			[
+				"sh",
+				"short_names	statement"
+			],
+			[
+				"ba",
+				"bar_cum_plot	function"
+			],
+			[
+				"base",
+				"base_time"
+			],
+			[
+				"st",
+				"staticmethod	class"
+			],
+			[
+				"sc",
+				"scriptsize"
+			],
+			[
+				"colu",
+				"columns"
+			],
+			[
+				"cente",
+				"centering"
+			],
+			[
+				"use",
+				"usepackage"
+			],
+			[
+				"sub",
+				"subsubsection"
+			],
+			[
+				"line",
+				"line_V3V"
+			],
+			[
+				"lide",
+				"line_debSCE"
+			],
+			[
+				"lineT",
+				"line_T"
+			],
+			[
+				"boxT",
+				"box_Tbal"
+			],
+			[
+				"pd",
+				"pdb	module"
+			],
+			[
+				"boH",
+				"box_HDir"
+			],
+			[
+				"kw",
+				"kwargs"
+			],
+			[
+				"boT",
+				"box_Tbal"
+			],
+			[
+				"ca",
+				"catch_axes	function"
+			],
+			[
+				"item",
+				"itemize"
+			],
+			[
+				"page",
+				"pagebreak"
+			],
+			[
+				"cen",
+				"center"
+			],
+			[
+				"mult",
+				"multicolumn"
+			],
+			[
+				"it",
+				"item	Itemize"
+			],
+			[
+				"ite",
+				"itemize"
+			],
+			[
+				"linE",
+				"line_E"
+			],
+			[
+				"Tes",
+				"Test_solar"
+			],
+			[
+				"Ve",
+				"Vsolar_state"
+			],
+			[
+				"V",
+				"V3V"
+			],
+			[
+				"time",
+				"time_dict"
+			],
+			[
+				"split",
+				"splitting	statement"
+			],
+			[
+				"liedbe2",
+				"line_debS2"
+			],
+			[
+				"liDe",
+				"line_debS1"
+			],
+			[
+				"deb",
+				"line_debC1"
+			],
+			[
+				"chu",
+				"chauff_app	statement"
+			],
+			[
+				"chau",
+				"chauff_app"
+			],
+			[
+				"get",
+				"get_visible"
+			],
+			[
+				"selec",
+				"selected_ax	param"
+			],
+			[
+				"set",
+				"set_visible"
+			],
+			[
+				"line_h",
+				"line_H"
+			],
+			[
+				"linedeS",
+				"line_debS1"
+			],
+			[
+				"if",
+				"if	keyword"
+			],
+			[
+				"ar",
+				"area_E"
+			],
+			[
+				"emp",
+				"emphs_bar	statement"
+			],
+			[
+				"len",
+				"length	statement"
+			],
+			[
+				"diC",
+				"diag_C"
+			],
+			[
+				"box",
+				"box_H"
+			],
+			[
+				"sola",
+				"solaire"
+			],
+			[
+				"res",
+				"restore	function"
+			],
+			[
+				"even",
+				"event	param"
+			],
+			[
+				"li",
+				"line_T"
+			],
+			[
+				"liS",
+				"line_debS"
+			],
+			[
+				"plot",
+				"plot_disp	forflow"
+			],
+			[
+				"tit",
+				"titles	statement"
+			],
+			[
+				"b",
+				"box_H"
+			],
+			[
+				"bo",
+				"box_T"
+			],
+			[
+				"lie",
+				"line_T"
+			],
+			[
+				"Value",
+				"ValueError	class"
+			],
+			[
+				"share",
+				"share_y	statement"
+			],
+			[
+				"sha",
+				"sharey	param"
+			],
+			[
+				"cols",
+				"cols_map	param"
+			],
+			[
+				"last",
+				"last_ind	statement"
+			],
+			[
+				"Date",
+				"datetime	module"
+			],
+			[
+				"summ",
+				"summation	param"
+			],
+			[
+				"str",
+				"structs	statement"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Markdown Preview/Markdown.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "pyr",
+		"selected_items":
+		[
+			[
+				"pyr",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"mar",
+				"Build With: Markdown"
+			],
+			[
+				"as",
+				"Anaconda: Show error list"
+			],
+			[
+				"a",
+				"Anaconda: Show error list"
+			],
+			[
+				"synpyt",
+				"Set Syntax: Python"
+			],
+			[
+				"synsq",
+				"Set Syntax: SQL"
+			],
+			[
+				"pep",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"user",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previe",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packaupda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"viewbro",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inser",
+				"Gist: Insert Gist"
+			],
+			[
+				"remv",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"py",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"ins ",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"marpr",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"marpre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"PYR",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"in",
+				"Gist: Insert Gist"
+			],
+			[
+				"rermo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pry",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"sav",
+				"File: Save All"
+			],
+			[
+				"pr",
+				"Permute Lines: Reverse"
+			],
+			[
+				"pas",
+				"Project: Save As"
+			],
+			[
+				"inse",
+				"Gist: Insert Gist"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 245.0,
+		"history":
+		[
+			"import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"print(\"eeeee\")",
+			"print(\"eeeee\"",
+			"%clear",
+			"clear",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/pampi/Documents/Courses/RealPython",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users"
+	],
+	"file_history":
+	[
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users/views.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks/views.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks/forms.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/views.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users/forms.py",
+		"/home/pampi/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/users/__init__.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/__init__.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks/__init__.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/.coverage",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/db_create.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/app/forms.py",
+		"/home/pampi/Documents/Courses/Algorithms/Algorithm/DataAlgorithm.whtt",
+		"/home/pampi/Documents/Projects/FromTerroir_database/.gitignore",
+		"/home/pampi/Documents/Projects/FromTerroir_database/Tests/test_dict.csv",
+		"/home/pampi/Documents/Projects/FromTerroir_database/Data/MCD/add.md",
+		"/home/pampi/Documents/Projects/FromTerroir_database/MCD/fromTerroir.sql",
+		"/home/pampi/Dropbox/FromTerroir_database/MCD/fromTerroir.sql",
+		"/home/pampi/Dropbox/Python_doc/General/RealPython/_READ_THIS_FIRST.txt",
+		"/home/pampi/Dropbox/Python_doc/General/RealPython/RealPythonPart2-Beta-v5/_READ_THIS_FIRST.txt",
+		"/home/pampi/Dropbox/Python_doc/General/Packt/Learning Python Design Patterns/3378OS_Code 3/Chapter 2 codes/crawler.py",
+		"/tmp/test",
+		"/tmp/test_docopt.py",
+		"/home/pampi/Documents/Projects/FromTerroir_database/Data/dict_data_conditionnement.csv",
+		"/home/pampi/.config/sublime-text-3/Packages/PowerCursors/Default (Linux).sublime-keymap",
+		"/home/pampi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Orthogonalization_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/vec.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/triangular.py",
+		"/home/pampi/Documents/Projects/FromTerroir_database/populate_database_test.py",
+		"/home/pampi/.config/sublime-text-3/Packages/User/Snippet/Python/Wrap-Try-Except.sublime-snippet",
+		"/home/pampi/Documents/Projects/FromTerroir_database/fromTerroir.sql",
+		"/home/pampi/Desktop/untitled.sql",
+		"/home/pampi/Downloads/README.md",
+		"/home/pampi/.config/sublime-text-3/Packages/SublimeREPL/config/Python/Main.sublime-menu",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Resources/train.data",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Resources/validate.data",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/orthogonalization.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/machine_learning_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/profile.txt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week7_Orthogonalization/Machine_Learning_Lab/machine_learning_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week6_GaussianElimination_InnerProduct/Inner_product/The_Inner_Product_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3_Matrix/The_Matrix_Problems/The_Matrix_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week6_GaussianElimination_InnerProduct/Gaussian_elimination/Gaussian_Elimination_problems.py",
+		"/home/pampi/Downloads/inkscape",
+		"/home/pampi/Documents/Courses/Inkscape/inkscape",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/factoring_support.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/factoring_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week6_GaussianElimination_InnerProduct/Factoring_lab/cracking_rand.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/secret_sharing_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/coursera_submit.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1_Vector/Video/2 - 2 - The Vector- Vector addition and scalar-vector multiplication  (10-16).srt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1_Vector/Video/2 - 2 - The Vector- Vector addition and scalar-vector multiplication  (10-16).mp4",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1_Vector/Video/2 - 7 - The Vector- Solving a triangular system of linear equations  (4-00).srt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1_Vector/Video/2 - 7 - The Vector- Solving a triangular system of linear equations  (4-00).mp4",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week0_FunctionField/Inverse_lab/stories_small.txt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week5_Dimension/Video/6 - 5 - Dimension- Dimension and linear functions I.mp4",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week4_Basis/Video/5 - 3 - The Basis- Algorithms for finding a set of generators.mp4",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week6_GaussianElimination_InnerProduct/Gaussian_elimination/gaussian_examples.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Gaussian_Elimination_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Inner_Product_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week4_Basis/Geometry_lab/geometry_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/echelon.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/geometry_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week6_GaussianElimination_InnerProduct/Gaussian_elimination/echelon.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week6_GaussianElimination_InnerProduct/Gaussian_elimination/cracking_rand.py",
+		"/home/pampi/Downloads/factoring_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Dimension_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week5_Dimension/Dimension_Problems/Dimension_problems.py",
+		"/home/pampi/Downloads/morph_coding_example.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week5_Dimension/Perspective_Lab/perspective_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/perspective_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Basis_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week5_Dimension/Video/6 - 2 - Dimension- Dimension and rank I.srt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week5_Dimension/Video/6 - 1 - Dimension- The size of a basis.srt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/independence.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/vecutil.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/image_mat_util.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week5_Dimension/Perspective_Lab/image_mat_util.py",
+		"/home/pampi/Documents/Doctorat/Untitled Document",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1_Vector/Vector_Class_Homework/vecutil.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Matrix_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/solver.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/mat.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week4_Basis/Geometry_lab/png.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3_Matrix/Error_Correcting _Code_Lab/bitutil.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/matutil.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/ecc_lab.py",
+		"/home/pampi/Documents/Courses/Algorithms/Algorithm/Code/basic/tools.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3_Matrix/Error_Correcting _Code_Lab/ecc_lab.py",
+		"/home/pampi/Documents/Programming_language/Python/Cours-Python/Work/SolisArt_script/Reader/Plotters/parameters.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/UN_voting_data.txt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/mat_sparsity.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3/Matrix_Class_Homework/mat_sparsity.py",
+		"/home/pampi/.local/share/Trash/files/vec.py",
+		"/home/pampi/.local/share/Trash/files/vec.2.py",
+		"/home/pampi/.local/share/Trash/files/vec.3.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Vector_Class_Homework/vec.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3/The_Matrix_Problems/matutil.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week2/The_Vector_Space_Problems/The_Vector_Space_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Vector_Space_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Politics_Lab/politics_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week2/Video/3 - 4 - The Vector Space- Vector spaces.srt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Video/2 - 1 - The Vector- What is a vector-  (8-20).srt",
+		"/home/pampi/Downloads/vec.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Politics_Lab/voting_record_dump109.txt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/politics_lab.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/The_ Vector_problems/The_Vector_problems.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Politics_Lab/UN_voting_data.txt",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/vecutil.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/vec.py",
+		"/home/pampi/Documents/Language/Python/Cours-Python/Library/vector2d.py",
+		"/home/pampi/Documents/Other/Sauvegarde/README.md",
+		"/home/pampi/Documents/Other/Sauvegarde/Python3Libs/pipPython3Libs",
+		"/home/pampi/Documents/Other/Sauvegarde/Python3Libs/python3libs",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/triangular.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Untitled Folder/vec.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/test_vec.py",
+		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Vector_problems.py",
+		"/home/pampi/Downloads/Le guide ultime et définitif sur la programmation orientée objet en Python à l’usage des débutants qui sont rassurés par les textes détaillés qui prennent le temps de tout expliquer. Partie 2.   Sam & Max.html",
+		"/D/Github/Projets/Publications/SolarCombisystem/abstract.tex",
+		"/D/Github/Projets/Publications/SolarCombisystem/Abstract/abstract.tex",
+		"/D/Github/Projets/Publications/Publication_projects.sublime-project",
+		"/D/Github/Projets/SolisArt/Rapport/2014_12_09/production_solaire.tex",
+		"/D/Github/Projets/IGC/Rapport/Plafond Rafraichissant/20150129/README.md",
+		"/D/Github/Projets/SolisArt/Rapport/2014_11_04/SolisArt_report.tex",
+		"/D/Github/Projets/IGC/Rapport/Plafond Rafraichissant/20150129/IGC_tache1-1.tex"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 97.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"InputRequired",
+			"url_for",
+			"app",
+			"tasks_blueprint",
+			"users_blueprint",
+			"InputRequired",
+			"DataRequired",
+			"url_for",
+			"app",
+			"flash_errors",
+			"app",
+			"subli",
+			"LIKE",
+			"vv.nom_pays",
+			"vr.libelle_r",
+			"vv.nom_region",
+			"vv.ville AS ville, ",
+			"id_o",
+			"parsed_root",
+			"e",
+			"specialite",
+			", verbose",
+			", verbose=verbose",
+			"            - verbose: if True log of errors are printed during the process.",
+			"verbose",
+			", verbose=verbose",
+			"verbose",
+			"AUTOINCREMENT",
+			"log",
+			"file_path",
+			"arguments",
+			"populate_database",
+			"test",
+			"<db_path>",
+			"<csv_path>",
+			"naval_fate",
+			"sequ",
+			"sequen",
+			"-----\\n",
+			"Sqlite3 \"",
+			"in e",
+			"            - log: True lead to print raised errors.",
+			"Integer",
+			"Exception",
+			"ville",
+			"Exception",
+			"AUTOINCREMENT",
+			"cond",
+			"daugther",
+			"produit",
+			"trigger_update_spiritueuxlog",
+			"update_time_v",
+			"DELETE ON",
+			"DELETE",
+			"_old",
+			"appellation_spi_old",
+			"millesime_spi_old",
+			"id_indicative_u",
+			"p.id_indicative_u",
+			"new",
+			"denomination_spe_old",
+			"_f",
+			"new",
+			"old",
+			"id_traitement_old",
+			"_spi",
+			"new",
+			",",
+			"old",
+			"_v",
+			"old",
+			"appellation_spi_old",
+			"_v",
+			"millesime_spi_old",
+			",",
+			"new",
+			"old",
+			"values",
+			"produit",
+			"_old",
+			"action_time_v",
+			"denomination_spe",
+			"id_traitement",
+			"millesime_spi",
+			"_v",
+			"insert_time_v",
+			"produitlog",
+			"id_vente",
+			"n",
+			"old.insert_time",
+			"insert_time",
+			"exam",
+			"insert_t",
+			",",
+			"new",
+			"examlog",
+			"insert_examlog",
+			"examlog",
+			"Insert_time",
+			"id_vente_u",
+			"id_indicative_u",
+			"id_o",
+			"poids_volume_p",
+			"id_conditionnement",
+			"chemin_image_p",
+			"description_p",
+			"prix_euros_p",
+			"nom_p",
+			"id_p",
+			"Action_time",
+			"id_conditionnement_old",
+			"ekeyOLD",
+			"select",
+			"begin",
+			"END",
+			"NULL",
+			"produit",
+			"vin",
+			"old",
+			"INTEGER PRIMARY KEY",
+			"cascade",
+			"limit",
+			"limi",
+			"None",
+			"\"cmd\"",
+			"origine",
+			"prod",
+			"function="
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			",",
+			"    ",
+			"data1",
+			"[h]",
+			"linewidth=self.width"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.anaconda_documentation":
+	{
+		"height": 376.0
+	},
+	"output.exec":
+	{
+		"height": 275.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "RealPython.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pyr",
+				"SolisArt_script\\Reader\\Plotters\\parameters.py"
+			],
+			[
+				"yr",
+				"Notebooks\\.ipynb_checkpoints\\Solar_system_output-checkpoint.ipynb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Doctorat/IBPSA/IBPSA.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 310.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 315.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
