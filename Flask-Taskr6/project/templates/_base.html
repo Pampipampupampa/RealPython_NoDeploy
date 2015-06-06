@@ -37,11 +37,11 @@
                     <a class="navbar-brand" href="/">FlaskTaskr5</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    {% if session.logged_in %}
                     <ul class="nav navbar-nav">
+                        {% if session.logged_in %}
                         <li><a>Welcome, {{username}}.</a></li>
+                        {% endif %}
                     </ul>
-                    {% endif %}
                     <ul class="nav navbar-nav navbar-right">
                     <!-- Update link according to current page -->
                     {% if not session.logged_in %}
