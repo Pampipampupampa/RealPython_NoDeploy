@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"err",
+				"errorhandler"
+			],
+			[
+				"asse",
+				"assertEqual	function"
+			],
+			[
 				"en",
 				"endif"
 			],
@@ -506,14 +514,6 @@
 			[
 				"cols",
 				"cols_map	param"
-			],
-			[
-				"last",
-				"last_ind	statement"
-			],
-			[
-				"Date",
-				"datetime	module"
 			]
 		]
 	},
@@ -528,34 +528,34 @@
 			}
 		},
 		{
+			"file": "Flask-Taskr6/run.py",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Flask-Taskr6/project/tests/test_main.py",
+			"settings":
+			{
+				"buffer_size": 1974,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Flask-Taskr6/project/tests/test_tasks.py",
+			"settings":
+			{
+				"buffer_size": 10066,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "Flask-Taskr6/project/tests/test_users.py",
 			"settings":
 			{
-				"buffer_size": 5969,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Flask-Taskr6/db_create.py",
-			"settings":
-			{
-				"buffer_size": 281,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Flask-Taskr6/project/templates/_base.html",
-			"settings":
-			{
-				"buffer_size": 3524,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Flask-Taskr6/project/tasks/__init__.py",
-			"settings":
-			{
-				"buffer_size": 22,
+				"buffer_size": 6046,
 				"line_ending": "Unix"
 			}
 		}
@@ -794,21 +794,35 @@
 		"/home/pampi/Documents/Courses/RealPython",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tasks",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/users"
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests"
 	],
 	"file_history":
 	[
+		"/media/pampi/910B-5374/Temp/reduce_consumption",
+		"/media/pampi/910B-5374/Temp/reduce_power_consumption",
+		"/etc/default/grub.d/50_linuxmint.cfg",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/_config.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/run.py",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_tasks.py",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/__init__.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_users.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_tasks.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_main.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates/404.html",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates/500.html",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/__init__.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/tests/test_users.py",
+		"/usr/share/X11/xorg.conf.d/20-intel.conf",
+		"/etc/default/grub",
+		"/usr/share/X11/xorg.conf.d/50-synaptics.conf",
+		"/home/pampi/.bashrc",
+		"/home/pampi/.profile",
+		"/home/pampi/.config/caja/desktop-metadata",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/db_create.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tasks/__init__.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates/_base.html",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates/tasks.html",
 		"/home/pampi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tasks/views.py",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/templates/_base.html",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/test.db",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/users/views.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/templates/tasks.html",
@@ -912,23 +926,7 @@
 		"/home/pampi/Documents/Courses/CodingTheMatrix/UN_voting_data.txt",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/mat_sparsity.py",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3/Matrix_Class_Homework/mat_sparsity.py",
-		"/home/pampi/.local/share/Trash/files/vec.py",
-		"/home/pampi/.local/share/Trash/files/vec.2.py",
-		"/home/pampi/.local/share/Trash/files/vec.3.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Vector_Class_Homework/vec.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3/The_Matrix_Problems/matutil.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week2/The_Vector_Space_Problems/The_Vector_Space_problems.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Vector_Space_problems.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Politics_Lab/politics_lab.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week2/Video/3 - 4 - The Vector Space- Vector spaces.srt",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Video/2 - 1 - The Vector- What is a vector-  (8-20).srt",
-		"/home/pampi/Downloads/vec.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Politics_Lab/voting_record_dump109.txt",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/politics_lab.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/The_ Vector_problems/The_Vector_problems.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/Politics_Lab/UN_voting_data.txt",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/vecutil.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1/vec.py"
+		"/home/pampi/.local/share/Trash/files/vec.py"
 	],
 	"find":
 	{
@@ -946,6 +944,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			",",
 			"Wel",
 			"Welcome",
 			"user",
@@ -1072,8 +1071,7 @@
 			"begin",
 			"END",
 			"NULL",
-			"produit",
-			"vin"
+			"produit"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1097,7 +1095,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1113,8 +1111,8 @@
 						"selection":
 						[
 							[
-								851,
-								851
+								1232,
+								1232
 							]
 						],
 						"settings":
@@ -1124,115 +1122,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 858.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Flask-Taskr6/project/tests/test_users.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5969,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1412,
-								1412
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 963.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Flask-Taskr6/db_create.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 281,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								281,
-								281
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 747.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "Flask-Taskr6/project/templates/_base.html",
+					"buffer": 1,
+					"file": "Flask-Taskr6/run.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3524,
+						"buffer_size": 173,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1681,
-								1681
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 585.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Flask-Taskr6/project/tasks/__init__.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21,
-								21
+								171,
+								171
 							]
 						],
 						"settings":
@@ -1243,7 +1153,97 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Flask-Taskr6/project/tests/test_main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1468,
+								1468
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1261.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Flask-Taskr6/project/tests/test_tasks.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								838,
+								838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Flask-Taskr6/project/tests/test_users.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								782,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -18,3 +18,6 @@ DATABASE_PATH = os.path.join(basedir, DATABASE)
 
 # Database URI
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH
+
+# Define app mode
+DEBUG = True
