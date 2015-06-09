@@ -526,6 +526,22 @@
 				"buffer_size": 471,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "Flask-Taskr6/project/__init__.py",
+			"settings":
+			{
+				"buffer_size": 1246,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Flask-Taskr6/Procfile",
+			"settings":
+			{
+				"buffer_size": 20,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -760,10 +776,7 @@
 	"expanded_folders":
 	[
 		"/home/pampi/Documents/Courses/RealPython",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr5/project/tasks",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project"
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6"
 	],
 	"file_history":
 	[
@@ -1063,7 +1076,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1086,6 +1099,65 @@
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Flask-Taskr6/project/__init__.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Flask-Taskr6/Procfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
