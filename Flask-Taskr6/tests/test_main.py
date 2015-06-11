@@ -6,7 +6,7 @@ import unittest
 
 from project import app, db
 from project._config import basedir
-from project.models import User
+# from project.models import User
 
 
 # Database used for testing
@@ -52,7 +52,7 @@ class AllTests(unittest.TestCase):
     def test_404_error(self):
         response = self.app.get('/This-route-does-not-exist')
         self.assertEquals(response.status_code, 404)
-        self.assertIn(b'Sorry your lost. There\'s nothing here.')
+        self.assertIn(b'Sorry your lost. There\xe2\x80\x99s nothing here.', response.data)
 
 # Can’t pass right now. Explain later.
     # def test_500_error(self):

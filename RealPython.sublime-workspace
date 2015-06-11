@@ -519,30 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Flask-Taskr6/project/_config.py",
-			"settings":
-			{
-				"buffer_size": 471,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Flask-Taskr6/project/__init__.py",
-			"settings":
-			{
-				"buffer_size": 1246,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Flask-Taskr6/Procfile",
-			"settings":
-			{
-				"buffer_size": 20,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -568,9 +544,13 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "as",
+		"last_filter": "pyr",
 		"selected_items":
 		[
+			[
+				"pyr",
+				"SublimeREPL: Python - RUN current file"
+			],
 			[
 				"as",
 				"Anaconda: Show error list"
@@ -590,10 +570,6 @@
 			[
 				"use",
 				"Preferences: Settings - User"
-			],
-			[
-				"pyr",
-				"SublimeREPL: Python - RUN current file"
 			],
 			[
 				"mar",
@@ -770,22 +746,35 @@
 		"show_minimap": true,
 		"show_open_files": false,
 		"show_tabs": false,
-		"side_bar_visible": true,
+		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
 	"expanded_folders":
 	[
 		"/home/pampi/Documents/Courses/RealPython",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6"
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project"
 	],
 	"file_history":
 	[
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/project/__init__.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/__init__.py",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/users/views.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/tests/test_main.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/tests/test_users.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/tests/test_tasks.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/tests/test_main.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/run.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/tests/test_api.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/tests/test_tasks.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-05/tests/test_tasks.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/run.py",
+		"/home/pampi/Documents/Courses/RealPython_externe/Flask-Taskr6/project/tests/test_main.py",
+		"/home/pampi/Documents/Programming_language/Python/Documentation/General/RealPython/RealPythonPart2-Beta-v5/book2-exercises/flasktaskr-06/Procfile",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/_config.py",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/Procfile",
+		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/users/views.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_users.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_tasks.py",
-		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/run.py",
 		"/home/pampi/Documents/Courses/RealPython/Flask-Taskr6/project/tests/test_main.py",
 		"/media/pampi/910B-5374/Temp/reduce_consumption",
 		"/media/pampi/910B-5374/Temp/reduce_power_consumption",
@@ -895,19 +884,7 @@
 		"/home/pampi/Documents/Doctorat/Untitled Document",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/Week1_Vector/Vector_Class_Homework/vecutil.py",
 		"/home/pampi/Documents/Courses/CodingTheMatrix/The_Matrix_problems.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/solver.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/mat.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week4_Basis/Geometry_lab/png.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3_Matrix/Error_Correcting _Code_Lab/bitutil.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/matutil.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/ecc_lab.py",
-		"/home/pampi/Documents/Courses/Algorithms/Algorithm/Code/basic/tools.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3_Matrix/Error_Correcting _Code_Lab/ecc_lab.py",
-		"/home/pampi/Documents/Programming_language/Python/Cours-Python/Work/SolisArt_script/Reader/Plotters/parameters.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/UN_voting_data.txt",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/mat_sparsity.py",
-		"/home/pampi/Documents/Courses/CodingTheMatrix/Week3/Matrix_Class_Homework/mat_sparsity.py",
-		"/home/pampi/.local/share/Trash/files/vec.py"
+		"/home/pampi/Documents/Courses/CodingTheMatrix/solver.py"
 	],
 	"find":
 	{
@@ -925,6 +902,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"User",
 			"regis",
 			"hash",
 			"reques",
@@ -1051,8 +1029,7 @@
 			"Action_time",
 			"id_conditionnement_old",
 			"ekeyOLD",
-			"select",
-			"begin"
+			"select"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1076,96 +1053,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Flask-Taskr6/project/_config.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 471,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Flask-Taskr6/project/__init__.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1246,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Flask-Taskr6/Procfile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 20,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20,
-								20
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1229,6 +1118,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"6_co",
+				"Flask-Taskr6/project/_config.py"
+			],
+			[
+				"6run",
+				"Flask-Taskr6/run.py"
+			],
 			[
 				"6temba",
 				"Flask-Taskr6/project/templates/_base.html"

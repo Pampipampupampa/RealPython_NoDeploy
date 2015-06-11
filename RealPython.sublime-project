@@ -12,6 +12,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/home/pampi/Documents/Courses/RealPython_externe"
 		}
 	]
 }
